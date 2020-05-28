@@ -1,57 +1,40 @@
 # magiclick-backend
-example codes
 
-!!bünyesinde frontend'ine çok ağırlık verilmemiş bir basic backend projesi vardır ve md uzantılı olacak şekilde js ve css örnek kodları mevcuttur.
+Bu repository, frontend'ine çok ağırlık verilmemiş bir **basic backend** projesi barındırır ve md uzantılı olacak şekilde js ve css örnek kodları mevcuttur.
 
-proje .net core tabanlı olup n-tier katmanlı mimariye sahiptir. basic olarak backend yeteneklerimi göstermek için
-hazırlamış olduğum bir proje.
-NOTLAR :
+Proje **.net core** tabanlı olup **n-tier** katmanlı mimariye sahiptir. Basic olarak backend yeteneklerimi göstermek için hazırlamış olduğum bir projedir.
 
-
-*1 yılı aşkın bir süre önce yazılmıştır.
-* Owin ile login ve role management yapmayı genel olarak sevmiyorum kendim yazmayı daha çok seviyorum.
+### NOTLAR :
+Bu proje kodları yaklaşık **iki** yılı aşkın bir süre önce yazılmıştır.
+-- Owin ile login ve role management yapmayı genel olarak sevmiyorum kendim yazmayı daha çok seviyorum.
 genel olarak kendim de yazıyor olsam aspect oriented mantığından kesinlikle faydalanmayı tercih ediyorum.
 
-
 Proje genel olarak;
-1) MVC projesi
+### MVC projesi
 
-Ekranlar=>
+| Api| İşlem | Kullanım | 
+|--|--|--|
+| Login | Verilen bilgiler ile OWIN üzerinden Login işlemi yapar. | Username ve Password gerekir. |  
+| Forgot Password | OWIN sistemi üzerinden parolayı mail atar. | - |
+| Product | Get-Post-Put-Delete işlemleri yapılır. (Http türüne göre) | - |
+| ProductDetail | Get işlemi yapar. | ProductId bilgisi gerekir. | 
 
-* Login
-* Şifremi unuttum
-* Kullanıcı adını hatırla (cookie)
-* kategori sayfası
-* Ürün Listesi
-* Ürün gösterme
+ - Ekranlar
+   * Login
+   * Şifremi unuttum
+   * Kullanıcı adını hatırla (cookie)
+   * kategori sayfası
+   * Ürün Listesi
+   * Ürün gösterme
+   
 
-2) MVC 
-
-=> Login api / username password OWIN üzerinden login eder.
-=> Şifremi unuttum => OWIN üzerinden şifreyi email atar.
-=> Ürün listesi sayfası ve kategori sayfası için
- *  HttpGet => Ürün getir
- *  HttpPost => Ürün Ekle
- *  HttpPut => Ürün Güncelle
- *  HttpDelete => Ürün Sil
-
-=> Ürün detay sayfası için 
-* HttpGet /Id olarak kullanılmıştır.
-
-
-
-* Framework tarafında EF kullanılıldı
-* Db tarafında mssql kullanıldı.
-* Login ve role için OWIN Security(Identity) tabloları kullanıldı ( yaklaşık 1 yıl önce yazdığım bir örnek projeydi)
-* Ürün sayfasına sadece product_view yetkisi olanlar girebiliyor.
-* Kategori sayfası recursive yapıdadır db den sağlanmıştır. ancak basic olarak tasarlanmıştır.
-* Webapi tarafı için JWT bearer tokeni kullanıldı.
-*Memory Cache kullanıldı
-*DI kullanıldı
-
-3) SQL
-
-Sql de hazırlanmış 2 farklı sp vardır.
-
-1) Kategorili ürün listesi(joinli)
-2) Recursive kategori listesi
+* ORM tarafında **Entity Framework** kullanılıldı
+* Veritabanı tarafında **mssql** kullanıldı.
+* Login ve role için OWIN Security(Identity) tabloları kullanıldı.
+* Ürün sayfasına sadece ***product_view*** yetkisi olanlar girebiliyor.
+* Kategori sayfası recursive yapıdadır db den sağlanmıştır. (*Basic bir yapıdadır.*)
+* Proje üzerinde **JWT** kullanılmıştır.
+* Proje içerisinde **Memory Cache** yapısı bulunmaktadır. (*Basic bir yapıdadır.*)
+* Sql de hazırlanmış iki farklı stored procedure vardır. (*Semboliktir*.)
+   * Kategorili ürün listesi (joinli)
+   * Recursive kategori listesi
