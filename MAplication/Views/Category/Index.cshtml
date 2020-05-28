@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+@model int
+@section Scripts
+{
+<script type="text/javascript">$(document).ready(function () {
+            MApplication.Index.Category.list(@Model);
+        });</script>
+}
+<div id="category-list">
+</div>

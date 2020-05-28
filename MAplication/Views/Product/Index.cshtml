@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Products";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+@section Scripts
+    {
+    <script type="text/javascript">
+$(document).ready(function () {
+            MApplication.Index.Product.list();
+        });</script>
+}
+<div id="product-list">
+</div>

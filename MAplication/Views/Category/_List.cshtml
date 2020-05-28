@@ -1,0 +1,26 @@
+﻿@using Entities.MApplication
+@using Core.ResultType
+@model Result<List<CategoryDO>>
+<h2>Categories</h2>
+<br />
+<a href="@Url.Action("Add","Category")">Create New Category</a>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Data)
+        {
+            <tr>
+                <th scope="row">@(Model.Data.IndexOf(item) + 1)</th>
+                <td><a href="@Url.Action("Index","Category",new { id = item.Id })">@item.CategoryName</a> </td>
+                <td><a href="@Url.Action("Edit","Category",new { id = item.Id })">Update</a> / <a onclick="MApplication.Index.Category.delete('@item.Id')">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

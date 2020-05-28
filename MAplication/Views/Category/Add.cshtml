@@ -1,0 +1,75 @@
+﻿@using Entities.ViewModels
+@model CategoryViewModel
+@{
+    ViewData["Title"] = "Category Add";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+<div class="row">
+    <h2 style="text-align:center">Add Category</h2>
+
+    <div class="align-center">
+        <div>
+            <section>
+                <form id="form-category" class="form-horizontal form-bordered" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label ">Category Name</label>
+
+                                <input class="form-control" type="text" asp-for="@Model.CategoryDO.CategoryName" />
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="control-label ">Category Code</label>
+                                <input class="form-control" type="text" asp-for="@Model.CategoryDO.CategoryCode" />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label ">Category Description</label>
+                                <input class="form-control" type="text" asp-for="@Model.CategoryDO.Description" />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label ">Category Display Order</label>
+                                <input class="form-control" type="number" asp-for="@Model.CategoryDO.DisplayOrder" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label ">Üst Kategori</label>
+                               
+                                    <select asp-for="@Model.CategoryDO.ParentCategoryId" class="btn btn-default form-control" data-label="left" data-width="100%">
+                                        @foreach (var item in Model.CategoryList)
+                                        {
+                                            <option value="@item.Id">@item.CategoryName</option>
+                                        }
+                                    </select>
+                                
+                            </div>
+
+                            <div class="form-group">
+                                <input class="" type="checkbox" style="float:left" asp-for="@Model.CategoryDO.IsActive" />
+                                <label class="">Category IsActive</label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <input type="button" onclick="MApplication.Index.Category.create()" class="btn green" value="Add">
+                                        <a asp-controller="Category" asp-action="Index" class="btn">Back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>

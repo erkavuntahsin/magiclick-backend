@@ -1,0 +1,76 @@
+﻿@using Entities.ViewModels
+@model ProductViewModel
+@{
+    ViewData["Title"] = "Product Edit";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+<div class="row">
+    <h2 style="text-align:center">Edit Product</h2>
+
+    <div class="align-center">
+        <div>
+            <section>
+                <form id="form-prod" enctype="multipart/form-data" class="form-horizontal form-bordered" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="control-label ">Product Name</label>
+                                <input type="hidden" asp-for="@Model.ProductDO.Id" />
+                                <input type="hidden" asp-for="@Model.ProductDO.CreateUserId" />
+                                <input class="form-control" type="text" asp-for="@Model.ProductDO.Name" />
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="control-label ">Product Description</label>
+                                <textarea class="form-control" type="text" asp-for="@Model.ProductDO.Description"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label ">Product Image</label>
+                                <input class="form-control" type="file" name="pic" id="pic" />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label ">Product Price</label>
+                                <input class="form-control" type="number" asp-for="@Model.ProductDO.Price" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label ">Category</label>
+
+                                <select asp-for="@Model.ProductDO.CategoryId" class="btn btn-default form-control" data-label="left" data-width="100%">
+                                    @foreach (var item in Model.CategoryList)
+                                    {
+                                        <option value="@item.Id">@item.CategoryName</option>
+                                    }
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">
+                                <input class="" type="checkbox" style="float:left" asp-for="@Model.ProductDO.IsActive" />
+                                <label class="">Product IsActive</label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" class="btn green" value="Save">
+                                        <a asp-controller="Product" asp-action="Index" class="btn">Back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>

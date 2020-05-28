@@ -1,0 +1,31 @@
+﻿@model Entities.MApplication.ProductDO
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+<div class="row">
+    <h2 style="text-align:center">Product Details</h2>
+
+    <div class="align-center">
+        <div>
+            <section>
+                
+            </section>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <div class="col-md-6 pull-left">
+                <img class="img-responsive img-thumbnail" src="~/Cdn/@Model.ImageUrl" />
+            </div>
+            <div class="col-md-6 pull-right">
+                <h2>@Model.Name</h2>
+                <h4>@Model.Description</h4>
+                <h2>@Model.Price</h2>
+                
+            </div>
+        </div>
+    </div>
+</div>
