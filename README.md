@@ -42,7 +42,6 @@ Ekranlar=>
 * Db tarafında mssql kullanıldı.
 * Login ve role için OWIN Security(Identity) tabloları kullanıldı ( yaklaşık 1 yıl önce yazdığım bir örnek projeydi)
 * Ürün sayfasına sadece product_view yetkisi olanlar girebiliyor.
-*Ürün tablosunda, id,name,catid,imageurl,price,isactive ve description alanları yeterlidir
 * Kategori sayfası recursive yapıdadır db den sağlanmıştır. ancak basic olarak tasarlanmıştır.
 * Webapi tarafı için JWT bearer tokeni kullanıldı.
 *Memory Cache kullanıldı
