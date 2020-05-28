@@ -4,6 +4,8 @@ basic backend codes
 proje .net core tabanlı olup n-tier katmanlı mimariye sahiptir. basic olarak backend yeteneklerimi göstermek için
 hazırlamış olduğum bir proje.
 NOTLAR :
+
+
 *1 yılı aşkın bir süre önce yazılmıştır.
 * Owin ile login ve role management yapmayı genel olarak sevmiyorum kendim yazmayı daha çok seviyorum.
 genel olarak kendim de yazıyor olsam aspect oriented mantığından kesinlikle faydalanmayı tercih ediyorum.
