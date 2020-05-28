@@ -1,5 +1,7 @@
 # magiclick-backend
-basic backend codes
+example codes
+
+!!bünyesinde frontend'ine çok ağırlık verilmemiş bir basic backend projesi vardır ve md uzantılı olacak şekilde js ve css örnek kodları mevcuttur.
 
 proje .net core tabanlı olup n-tier katmanlı mimariye sahiptir. basic olarak backend yeteneklerimi göstermek için
 hazırlamış olduğum bir proje.
